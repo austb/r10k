@@ -1,4 +1,5 @@
 require 'r10k'
+require 'puppet_forge'
 
 module R10K::Module
 

@@ -1,10 +1,8 @@
 require 'r10k/module'
 require 'r10k/errors'
-require 'shared/puppet_forge/metadata'
 require 'r10k/module/metadata_file'
 
 require 'r10k/forge/module_release'
-require 'shared/puppet_forge/v3/module'
 
 require 'pathname'
 require 'fileutils'
@@ -35,7 +33,7 @@ class R10K::Module::Forge < R10K::Module::Base
     @metadata = @metadata_file.read
 
     @expected_version = expected_version || current_version || :latest
-    @v3_module = PuppetForge::V3::Module.new(@title)
+    @v3_module = PuppetForge::V3::Module.new(:slug => @title)
   end
 
   def sync(options = {})
