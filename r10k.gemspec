@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'log4r',     '1.1.10'
   s.add_dependency 'multi_json', '~> 1.10'
 
+  s.add_dependency 'puppet_forge',                  '~> 2.0.0'
   s.add_dependency 'faraday',                       '~> 0.9.0'
   s.add_dependency 'faraday_middleware',            '~> 0.9.0'
   s.add_dependency 'faraday_middleware-multi_json', '~> 0.0.6'
@@ -39,7 +40,6 @@ Gem::Specification.new do |s|
 
 
   s.add_development_dependency 'yard', '~> 0.8.7.3'
-  s.add_development_dependency 'pry'
 
   s.files        = %x[git ls-files].split($/)
   s.require_path = 'lib'

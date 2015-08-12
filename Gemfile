@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'puppet_forge', :git => 'git@github.com:austb/forge-ruby.git', :branch => 'task/2.0.x/codemgmt-308'
 gemspec
 
 group :extra do

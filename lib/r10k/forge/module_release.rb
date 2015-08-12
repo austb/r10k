@@ -4,8 +4,6 @@ require 'fileutils'
 require 'forwardable'
 require 'tmpdir'
 
-require 'pry'
-
 module R10K
   module Forge
     # Download, unpack, and install modules from the Puppet Forge
@@ -79,7 +77,7 @@ module R10K
       # Verify the module release downloaded to {#download_path} against the
       # module release checksum given by the Puppet Forge
       #
-      # @raise [PuppetForge::V3::ModuleRelease::ChecksumMismatch] The
+      # @raise [PuppetForge::V3::Release::ChecksumMismatch] The
       #   downloaded module release checksum doesn't match the expected Forge
       #   module release checksum.
       # @return [void]
