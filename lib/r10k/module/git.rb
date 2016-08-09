@@ -49,6 +49,7 @@ class R10K::Module::Git < R10K::Module::Base
   private
 
   def validate_ref(desired, default)
+    require 'pry'; binding.pry
     if desired && @repo.resolve(desired)
       return desired
     elsif default && @repo.resolve(default)
@@ -73,7 +74,7 @@ class R10K::Module::Git < R10K::Module::Base
 
     @remote = options[:git]
 
-    @desired_ref = ref_opts.find { |key| break options[key] if options.has_key?(key) } || 'master'
+    @desired_ref = ref_opts.find { |key| break options[key] if options.has_key?(key) } || 'HEAD'
     @default_ref = options[:default_branch]
 
     if @desired_ref == :control_branch
